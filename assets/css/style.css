@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+:root {
+  --bg-color: #3f3e56;
+  --main-color: #8985a8;
+  --logOut-color: #ff002e;
+  --btn-color: #6c63ff;
+  --font-color: #2f2e41;
+}
+
+/* --- General Styling --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Roboto Mono", monospace;
+  color: var(--main-color);
+  min-height: 100vh;
+  max-width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.red {
+  color: var(--logOut-color);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* --- Header --- */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 4.25em;
+}
+
+nav img {
+  margin-left: 7.625em;
+}
+
+ul {
+  display: flex;
+  font-size: 1.25em;
+}
+
+li {
+  list-style: none;
+}
+
+li:nth-child(1) {
+  padding-right: 8em;
+}
+
+li:last-child {
+  padding-right: 7.6875em;
+}
+
+li:last-child:hover {
+  text-decoration: underline;
+}
+
+/* --- Main --- */
+
+main {
+  display: flex;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 4.375em;
+  text-transform: uppercase;
+}
+
+#secret {
+  margin-top: 10em;
+}
+
+#secret p {
+  font-size: 1.75em;
+}
+
+#secret a {
+  background-color: var(--btn-color);
+  color: var(--font-color);
+  text-transform: uppercase;
+  font-size: 1.5625em;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em 1.5em;
+  overflow: hidden;
+  position: relative;
+  top: 3em;
+}
+
+#secret a:before {
+  content: "Click me!";
+  position: absolute;
+  bottom: 1px;
+  height: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  transition: all 0.4s ease-in-out;
+  visibility: hidden;
+  text-align: center;
+}
+
+#secret a:hover {
+  color: var(--font-color);
+}
+
+#secret a:hover::before {
+  height: 2.1em;
+  background-color: #fff;
+  border-radius: 10px;
+  visibility: visible;
+  text-align: center;
+}
+
+/* --- User input popup --- */
+
+form {
+  background-color: var(--main-color);
+  width: 78vw;
+  height: 80vh;
+  text-align: center;
+  border-radius: 15px;
+  position: absolute;
+  top: 10em;
+  left: 10.25em;
+  box-shadow: 0px 8px 30px 0px rgba(0, 0, 0, 0.7);
+}
+
+form h2 {
+  font-size: 3.75em;
+  color: var(--font-color);
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  padding-top: 1em;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  outline: none;
+  font-size: 1.875em;
+  font-family: "Roboto Mono", monospace;
+}
+
+input[type="submit"] {
+  background-color: var(--btn-color);
+  color: var(--font-color);
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em 3.6em;
+  font-size: 1.5625em;
+  width: 43vw;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+}
+
+input[type="submit"]:hover {
+  box-shadow: inset 43vw 0 0 0 #fff;
+  border: 6px solid var(--btn-color);
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 43vw;
+  height: 10vh;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+}
+
+input::placeholder {
+  font-size: 1em;
+}
+
+/* --- Login message --- */
+
+.message {
+  font-size: 1.875em;
+  font-weight: 700;
+  color: var(--logOut-color);
+  text-align: left;
+  margin-left: 8.5em;
+  margin-top: 1em;
+}
+
+/* --- Add asterisk when input is wrong --- */
+
+.wrongId::after,
+.wrongPw::after {
+  content: " *";
+  color: var(--logOut-color);
+  position: absolute;
+  font-size: 2em;
+  top: 6.3em;
+  right: 7em;
+}
+
+.wrongPw::after {
+  top: 9.7em;
+  right: 7em;
+}
+
+/* --- Blur effect --- */
+
+.blur {
+  backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  height: 120vh;
+  width: 95vw;
+}
+
+/* --- Secret content --- */
+
+#random {
+  width: 50vw;
+  /* height: 50vh; */
+  margin: 0 auto;
+  text-align: center;
+  font-size: 2em;
+}
+
+/* #random img {
+  width: 50%;
+}
+
+#random p {
+  font-size: 1.75em;
+  margin-top: 0.5em;
+} */
+
+.secret-content {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  padding-top: 1em;
+}
+
+#button {
+  background-color: var(--btn-color);
+  text-transform: uppercase;
+  font-size: 1.5625em;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5em 1.5em;
+  outline: none;
+  margin-left: 26em;
+  margin-bottom: 2em;
+}
+
+#button:hover {
+  animation: bounce 1s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
